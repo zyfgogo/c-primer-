@@ -1,0 +1,39 @@
+#include <iostream>
+#include<string>
+#include<exception>
+using namespace std;
+class Person 
+{
+public:
+	string person_name;
+	string person_address;
+	Person(string n, string a) {//构造函数
+		person_name = n;
+		person_address = a;
+	}
+	void show_info() {
+		cout << "name is " << person_name << " address is " << person_address << endl;
+	}
+};	
+	istream &read(istream &is, Person &person) {
+		is >> person.person_name >> person.person_address;
+		return is;
+	}
+	ostream &print(ostream &os, Person &person) {
+		os << person.person_name << " " << person.person_address;
+		return os;
+	}
+
+
+int main() {
+	cout << "what is your name ?" << endl;
+	string name, address;
+	while (cin >> name) {
+		cout << "what is your address ?" << endl;
+		cin >> address;
+		break;
+	}
+	Person WO(name,address);
+	WO.show_info();
+	return 0;
+}
